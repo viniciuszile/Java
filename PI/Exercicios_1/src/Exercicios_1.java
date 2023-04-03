@@ -1,7 +1,8 @@
+import java.util.Scanner;
 
-import Java.util.Scanner;
-
-public class Exercicios_Faculdade3 {
+public class Exercicios_1 {
+    public static void main(String[] args) {
+        
     String string = "=-"; //string que formara a linha =-=-=-=- para melhor experiencia do usuario
     int count = 40; // numero de vezes que a o caractere -= sera reptido
     int acesso;
@@ -370,4 +371,5 @@ public class Exercicios_Faculdade3 {
         System.out.println("" + string.repeat(count));
 
     }
+ }
 }
