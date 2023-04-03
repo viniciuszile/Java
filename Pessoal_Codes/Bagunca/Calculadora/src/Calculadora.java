@@ -1,5 +1,3 @@
-package com.mycompany.calculadora;
-
 import java.util.Scanner;
 
 public class Calculadora {
@@ -69,4 +67,6 @@ public class Calculadora {
         
     }
 }
+
+
 
