@@ -1,5 +1,5 @@
 git add .
 
-git commit -a -m "primeiro commit"
+git commit -a -m "adicioando projeto loja"
 
 git push origin main
