@@ -105,6 +105,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="2 Jogadores"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botao_multplayerActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JToggleButton" name="botao_solo">
           <Properties>

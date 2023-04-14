@@ -44,6 +44,11 @@ public class Menu_Principal extends javax.swing.JFrame {
         botao_rpg.setText("RPG");
 
         botao_multplayer.setText("2 Jogadores");
+        botao_multplayer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botao_multplayerActionPerformed(evt);
+            }
+        });
 
         botao_solo.setText("1 Jogador");
         botao_solo.addActionListener(new java.awt.event.ActionListener() {
@@ -107,6 +112,17 @@ public class Menu_Principal extends javax.swing.JFrame {
         Menu_Solo menuSolo = new Menu_Solo();
         menuSolo.setVisible(true);
     }//GEN-LAST:event_botao_soloActionPerformed
+
+    private void botao_multplayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_multplayerActionPerformed
+        // TODO add your handling code here:
+
+        // fecha a janela atual
+        this.dispose();
+
+        // cria e exibe a janela "solo"
+        Menu_Multplayer menuMultplayer= new Menu_Multplayer();
+        menuMultplayer.setVisible(true);
+    }//GEN-LAST:event_botao_multplayerActionPerformed
 
     /**
      * @param args the command line arguments
