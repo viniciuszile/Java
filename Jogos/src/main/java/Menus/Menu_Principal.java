@@ -11,7 +11,7 @@ package Menus;
 public class Menu_Principal extends javax.swing.JFrame {
 
     /**
-     * Creates new form Menu_Principal
+     * Creates new formz Menu_Principal
      */
     public Menu_Principal() {
         initComponents();
@@ -33,7 +33,6 @@ public class Menu_Principal extends javax.swing.JFrame {
         botao_solo = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(500, 500));
         setSize(new java.awt.Dimension(500, 500));
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 102));
@@ -68,13 +67,14 @@ public class Menu_Principal extends javax.swing.JFrame {
                         .addComponent(jLabel1)
                         .addGap(113, 113, 113))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(botao_multplayer)
-                            .addComponent(botao_solo)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(botao_rpg)
-                                .addGap(13, 13, 13)))
-                        .addGap(212, 212, 212))))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(botao_solo)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(botao_rpg)
+                                    .addGap(13, 13, 13))))
+                        .addGap(201, 201, 201))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

@@ -3,9 +3,6 @@
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
-    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[500, 500]"/>
-    </Property>
     <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
       <Dimension value="[500, 500]"/>
     </Property>
@@ -57,15 +54,17 @@
                           <EmptySpace min="-2" pref="113" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="botao_multplayer" min="-2" max="-2" attributes="0"/>
-                              <Component id="botao_solo" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="botao_rpg" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="botao_solo" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="botao_rpg" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
-                          <EmptySpace min="-2" pref="212" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="201" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>

@@ -4,7 +4,7 @@
  */
 package Menus;
 
-import Jogos.Jogo_Da_Velha;
+import Jogos_Solo.Jogo_Da_Velha;
 
 /**
  *
