@@ -7,23 +7,22 @@ package Jogos_Mult;
 import Menus.Menu_Principal;
 import java.lang.Math;
 
-
 /**
  *
  * @author Zile
  */
 public class Acerte_Numero_Mult extends javax.swing.JFrame {
 
-    double numero_aleatorio = Math.floor(Math.random() * 101); // numero aleatorio gerado
-    double tentativa = 0;
+    int n_p1 = 0;
+    int n_p2 = 0;
     int contador = 0;
-    
+    int zile = 0;
+
     /**
      * Creates new form Acerte_Numero2
      */
     public Acerte_Numero_Mult() {
         initComponents();
-        jogar_novamente.setVisible(false); // Esconde o botão inicialmente
     }
 
     /**
@@ -36,15 +35,15 @@ public class Acerte_Numero_Mult extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        label_acerte = new javax.swing.JLabel();
         input_tentativa = new javax.swing.JTextField();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jLabel1 = new javax.swing.JLabel();
-        label_contador = new javax.swing.JLabel();
-        jogar_novamente = new javax.swing.JToggleButton();
+        botao_enviar = new javax.swing.JToggleButton();
         jLabel4 = new javax.swing.JLabel();
         voltar_menu = new javax.swing.JToggleButton();
+        label_mult = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -52,15 +51,10 @@ public class Acerte_Numero_Mult extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 51, 51));
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Acerte o Numero");
-
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Digite Um Numero");
+        label_acerte.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        label_acerte.setForeground(new java.awt.Color(255, 255, 255));
+        label_acerte.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_acerte.setText("Acerte o Numero");
 
         input_tentativa.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         input_tentativa.addActionListener(new java.awt.event.ActionListener() {
@@ -69,34 +63,15 @@ public class Acerte_Numero_Mult extends javax.swing.JFrame {
             }
         });
 
-        jToggleButton1.setText("enviar");
-        jToggleButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        botao_enviar.setText("enviar");
+        botao_enviar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jToggleButton1MouseClicked(evt);
+                botao_enviarMouseClicked(evt);
             }
         });
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        botao_enviar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
-            }
-        });
-
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText(".");
-
-        label_contador.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        label_contador.setForeground(new java.awt.Color(204, 204, 204));
-        label_contador.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        label_contador.setText("Numero De tentavia :");
-
-        jogar_novamente.setBackground(new java.awt.Color(204, 204, 255));
-        jogar_novamente.setForeground(new java.awt.Color(0, 0, 0));
-        jogar_novamente.setText("Jogar novamente");
-        jogar_novamente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jogar_novamenteActionPerformed(evt);
+                botao_enviarActionPerformed(evt);
             }
         });
 
@@ -114,40 +89,49 @@ public class Acerte_Numero_Mult extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("Mult");
+        label_mult.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        label_mult.setForeground(new java.awt.Color(255, 255, 255));
+        label_mult.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_mult.setText("Modo : Multplayer");
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel1.setText("Numero do player 1 : ");
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel3.setText("Informe o numero do p1");
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel5.setText("Numero do player 2: ");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(label_contador, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(168, 168, 168)
-                .addComponent(input_tentativa, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jToggleButton1)
-                .addContainerGap(92, Short.MAX_VALUE))
+            .addComponent(label_acerte, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(8, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(131, 131, 131))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jogar_novamente)
-                        .addGap(185, 185, 185))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(voltar_menu)
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(131, 131, 131))))
+                        .addComponent(label_mult, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(131, 131, 131))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(290, 290, 290))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(168, 168, 168)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel1)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(input_tentativa, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(botao_enviar)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -155,22 +139,22 @@ public class Acerte_Numero_Mult extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(voltar_menu)
                 .addGap(9, 9, 9)
-                .addComponent(jLabel5)
+                .addComponent(label_mult)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
-                .addGap(18, 18, 18)
+                .addComponent(label_acerte)
+                .addGap(59, 59, 59)
                 .addComponent(jLabel3)
-                .addGap(38, 38, 38)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(input_tentativa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton1))
-                .addGap(18, 18, 18)
+                    .addComponent(botao_enviar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(label_contador, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jogar_novamente)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
                 .addComponent(jLabel4))
         );
 
@@ -188,47 +172,33 @@ public class Acerte_Numero_Mult extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-        String textoDigitado = input_tentativa.getText();
+    private void botao_enviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_enviarActionPerformed
+
+        String textoDigitado1 = input_tentativa.getText();
         input_tentativa.setText(""); // Limpa o texto do JTextField
 
-        double tentativa = Double.parseDouble(textoDigitado);
+        int n_p1 = 0; // Declaração inicial da variável n_p1 com valor padrão
+        int n_p2 = 0; // Declaração inicial da variável n_p2 com valor padrão
+        zile = zile + 1;
 
-        if (tentativa == numero_aleatorio) {
-            jLabel1.setText("Acertou");
-            contador = contador + 1;
+        if (zile > 0) {
+            jLabel3.setText("Informe o numero do p2 ");
 
-            jogar_novamente.setVisible(true); // Esconde o botão inicialmente
+            String textoDigitado2 = input_tentativa.getText();
+            input_tentativa.setText(""); // Limpa o texto do JTextField
 
-        } else if (tentativa < numero_aleatorio) {
-            jLabel1.setText("Chutou Baixo");
-            contador = contador + 1;
-//            timer.start();
-        } else if (tentativa > numero_aleatorio) {
-            jLabel1.setText("Chutou Alto");
-            contador = contador + 1;
-//            timer.start();
-        } else {
-            jLabel1.setText("Tentativa Invalida.");
-            contador = contador + 1;
+//            if (!textoDigitado1.isEmpty()) { // Verifica se a string não está vazia
+//                n_p1 = Integer.parseInt(textoDigitado1); // Converte a string para int
+//            }
+//
+//            if (!textoDigitado2.isEmpty()) { // Verifica se a string não está vazia
+//                n_p2 = Integer.parseInt(textoDigitado2); // Converte a string para int
+//            }
         }
 
-        label_contador.setText("Numero De tentativa : " + contador);
-        //
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
-
-    private void input_tentativaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_input_tentativaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_input_tentativaActionPerformed
-
-    private void jogar_novamenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jogar_novamenteActionPerformed
-        // TODO add your handling code here:
-        numero_aleatorio = Math.floor(Math.random() * 101);
-        contador = 0;
-        jogar_novamente.setVisible(false); // Esconde o botão inicialmente
-        label_contador.setText("Numero De tentativa : " + contador);
-
-    }//GEN-LAST:event_jogar_novamenteActionPerformed
+        jLabel1.setText("numero do player 1: " + n_p1);
+        jLabel5.setText("numero do player 2: " + n_p2);
+    }//GEN-LAST:event_botao_enviarActionPerformed
 
     private void voltar_menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltar_menuActionPerformed
         // TODO add your handling code here:
@@ -239,9 +209,14 @@ public class Acerte_Numero_Mult extends javax.swing.JFrame {
         Menu_Principal.setVisible(true);
     }//GEN-LAST:event_voltar_menuActionPerformed
 
-    private void jToggleButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton1MouseClicked
+    private void botao_enviarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_enviarMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton1MouseClicked
+        label_mult.setVisible(true);
+    }//GEN-LAST:event_botao_enviarMouseClicked
+
+    private void input_tentativaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_input_tentativaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_input_tentativaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -282,6 +257,7 @@ public class Acerte_Numero_Mult extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton botao_enviar;
     private javax.swing.JTextField input_tentativa;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -289,9 +265,8 @@ public class Acerte_Numero_Mult extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jogar_novamente;
-    private javax.swing.JLabel label_contador;
+    private javax.swing.JLabel label_acerte;
+    private javax.swing.JLabel label_mult;
     private javax.swing.JToggleButton voltar_menu;
     // End of variables declaration//GEN-END:variables
 }

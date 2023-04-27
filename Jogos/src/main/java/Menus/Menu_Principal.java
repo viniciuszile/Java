@@ -4,6 +4,8 @@
  */
 package Menus;
 
+import java.awt.Dimension;
+
 /**
  *
  * @author Zile
@@ -15,6 +17,11 @@ public class Menu_Principal extends javax.swing.JFrame {
      */
     public Menu_Principal() {
         initComponents();
+        Dimension maxDimension = new Dimension(500, 500);
+        this.setMaximumSize(maxDimension);
+
+// Impede que o usuário redimensione a janela
+        this.setResizable(false);
     }
 
     /**
@@ -34,22 +41,57 @@ public class Menu_Principal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(500, 500));
+        setType(java.awt.Window.Type.POPUP);
 
-        jPanel1.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel1.setBackground(new java.awt.Color(42, 42, 42));
+        jPanel1.setMaximumSize(new java.awt.Dimension(500, 500));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Selecione um modo de jogo");
 
+        botao_rpg.setBackground(new java.awt.Color(0, 0, 0));
+        botao_rpg.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        botao_rpg.setForeground(new java.awt.Color(255, 255, 255));
+        botao_rpg.setSelected(true);
         botao_rpg.setText("RPG");
+        botao_rpg.setBorderPainted(false);
+        botao_rpg.setFocusPainted(false);
+        botao_rpg.setFocusable(false);
+        botao_rpg.setIconTextGap(10);
+        botao_rpg.setRequestFocusEnabled(false);
+        botao_rpg.setRolloverEnabled(false);
+        botao_rpg.setVerifyInputWhenFocusTarget(false);
 
+        botao_multplayer.setBackground(new java.awt.Color(0, 0, 0));
+        botao_multplayer.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        botao_multplayer.setForeground(new java.awt.Color(255, 255, 255));
+        botao_multplayer.setSelected(true);
         botao_multplayer.setText("2 Jogadores");
+        botao_multplayer.setBorderPainted(false);
+        botao_multplayer.setFocusPainted(false);
+        botao_multplayer.setFocusable(false);
+        botao_multplayer.setPreferredSize(new java.awt.Dimension(58, 27));
+        botao_multplayer.setRequestFocusEnabled(false);
+        botao_multplayer.setRolloverEnabled(false);
         botao_multplayer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botao_multplayerActionPerformed(evt);
             }
         });
 
+        botao_solo.setBackground(new java.awt.Color(0, 0, 0));
+        botao_solo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        botao_solo.setForeground(new java.awt.Color(255, 255, 255));
+        botao_solo.setSelected(true);
         botao_solo.setText("1 Jogador");
+        botao_solo.setBorderPainted(false);
+        botao_solo.setFocusPainted(false);
+        botao_solo.setFocusable(false);
+        botao_solo.setOpaque(false);
+        botao_solo.setRequestFocusEnabled(false);
+        botao_solo.setRolloverEnabled(false);
         botao_solo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botao_soloActionPerformed(evt);
@@ -60,41 +102,34 @@ public class Menu_Principal extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(162, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(113, 113, 113))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(botao_multplayer)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(botao_solo)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(botao_rpg)
-                                    .addGap(13, 13, 13))))
-                        .addGap(201, 201, 201))))
+            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(182, 182, 182)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(botao_solo, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botao_multplayer, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botao_rpg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(168, 168, 168))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(135, 135, 135)
                 .addComponent(jLabel1)
-                .addGap(90, 90, 90)
-                .addComponent(botao_rpg)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(botao_solo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(botao_multplayer)
-                .addContainerGap(149, Short.MAX_VALUE))
+                .addGap(93, 93, 93)
+                .addComponent(botao_rpg, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(botao_multplayer, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(botao_solo, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(88, 88, 88))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -104,6 +139,17 @@ public class Menu_Principal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void botao_multplayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_multplayerActionPerformed
+        // TODO add your handling code here:
+
+        // fecha a janela atual
+        this.dispose();
+
+        // cria e exibe a janela "solo"
+        Menu_Multplayer menuMultplayer = new Menu_Multplayer();
+        menuMultplayer.setVisible(true);
+    }//GEN-LAST:event_botao_multplayerActionPerformed
+
     private void botao_soloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_soloActionPerformed
         // fecha a janela atual
         this.dispose();
@@ -112,17 +158,6 @@ public class Menu_Principal extends javax.swing.JFrame {
         Menu_Solo menuSolo = new Menu_Solo();
         menuSolo.setVisible(true);
     }//GEN-LAST:event_botao_soloActionPerformed
-
-    private void botao_multplayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_multplayerActionPerformed
-        // TODO add your handling code here:
-
-        // fecha a janela atual
-        this.dispose();
-
-        // cria e exibe a janela "solo"
-        Menu_Multplayer menuMultplayer= new Menu_Multplayer();
-        menuMultplayer.setVisible(true);
-    }//GEN-LAST:event_botao_multplayerActionPerformed
 
     /**
      * @param args the command line arguments
