@@ -10,7 +10,10 @@ import Jogos_Solo.Impar_Par;
 import Jogos_Solo.Jokenpo;
 import Jogos_Solo.Quiz;
 import Jogos_Solo.Jogo_Da_Velha;
+import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 /**
  *
@@ -59,11 +62,10 @@ public class Menu_Solo extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(42, 42, 42));
-        setPreferredSize(new java.awt.Dimension(500, 500));
         setSize(new java.awt.Dimension(500, 550));
         setType(java.awt.Window.Type.POPUP);
 
-        jPanel1.setBackground(new java.awt.Color(255, 0, 102));
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setPreferredSize(new java.awt.Dimension(500, 600));
 
         mult_menu.setBackground(new java.awt.Color(255, 255, 255));
@@ -85,6 +87,17 @@ public class Menu_Solo extends javax.swing.JFrame {
         btn_acertenum.setBackground(new java.awt.Color(255, 255, 255));
         btn_acertenum.setForeground(new java.awt.Color(0, 0, 0));
         btn_acertenum.setText("Acerte o Numero");
+        btn_acertenum.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_acertenumMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn_acertenumMouseExited(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btn_acertenumMouseReleased(evt);
+            }
+        });
         btn_acertenum.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_acertenumActionPerformed(evt);
@@ -94,6 +107,14 @@ public class Menu_Solo extends javax.swing.JFrame {
         btn_forca.setBackground(new java.awt.Color(255, 255, 255));
         btn_forca.setForeground(new java.awt.Color(0, 0, 0));
         btn_forca.setText("Forca");
+        btn_forca.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_forcaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn_forcaMouseExited(evt);
+            }
+        });
         btn_forca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_forcaActionPerformed(evt);
@@ -103,6 +124,14 @@ public class Menu_Solo extends javax.swing.JFrame {
         btn_quiz.setBackground(new java.awt.Color(255, 255, 255));
         btn_quiz.setForeground(new java.awt.Color(0, 0, 0));
         btn_quiz.setText("Quiz");
+        btn_quiz.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_quizMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn_quizMouseExited(evt);
+            }
+        });
         btn_quiz.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_quizActionPerformed(evt);
@@ -112,6 +141,14 @@ public class Menu_Solo extends javax.swing.JFrame {
         btn_velha.setBackground(new java.awt.Color(255, 255, 255));
         btn_velha.setForeground(new java.awt.Color(0, 0, 0));
         btn_velha.setText("Jogo Da Velha");
+        btn_velha.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_velhaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn_velhaMouseExited(evt);
+            }
+        });
         btn_velha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_velhaActionPerformed(evt);
@@ -121,6 +158,14 @@ public class Menu_Solo extends javax.swing.JFrame {
         btn_jokenpo.setBackground(new java.awt.Color(255, 255, 255));
         btn_jokenpo.setForeground(new java.awt.Color(0, 0, 0));
         btn_jokenpo.setText("Jokenpo");
+        btn_jokenpo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_jokenpoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn_jokenpoMouseExited(evt);
+            }
+        });
         btn_jokenpo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_jokenpoActionPerformed(evt);
@@ -130,6 +175,14 @@ public class Menu_Solo extends javax.swing.JFrame {
         btn_impapar.setBackground(new java.awt.Color(255, 255, 255));
         btn_impapar.setForeground(new java.awt.Color(0, 0, 0));
         btn_impapar.setText("Impa Ou Par");
+        btn_impapar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_impaparMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn_impaparMouseExited(evt);
+            }
+        });
         btn_impapar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_impaparActionPerformed(evt);
@@ -266,6 +319,83 @@ public class Menu_Solo extends javax.swing.JFrame {
         Quiz.main(new String[]{});
         this.dispose();
     }//GEN-LAST:event_btn_impaparActionPerformed
+
+    private void btn_acertenumMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_acertenumMouseReleased
+        // TODO add your handling code here:
+        btn_acertenum.setBackground(Color.BLUE);
+    }//GEN-LAST:event_btn_acertenumMouseReleased
+
+    private void btn_acertenumMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_acertenumMouseEntered
+        // TODO add your handling code here:
+        btn_acertenum.setBackground(new Color(102, 102, 102, 110));
+        btn_acertenum.setForeground(new Color(255, 255, 255, 255));
+    }//GEN-LAST:event_btn_acertenumMouseEntered
+
+    private void btn_acertenumMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_acertenumMouseExited
+        // TODO add your handling code here:
+        btn_acertenum.setBackground(Color.WHITE);
+        btn_acertenum.setForeground(new Color(0, 0, 0, 255));
+    }//GEN-LAST:event_btn_acertenumMouseExited
+
+    private void btn_quizMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_quizMouseEntered
+        // TODO add your handling code here:
+        btn_quiz.setBackground(new Color(102, 102, 102, 255));
+        btn_quiz.setForeground(new Color(255, 255, 255, 255));
+    }//GEN-LAST:event_btn_quizMouseEntered
+
+    private void btn_quizMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_quizMouseExited
+        // TODO add your handling code here:
+        btn_quiz.setBackground(Color.WHITE);
+        btn_quiz.setForeground(new Color(0, 0, 0, 255));
+    }//GEN-LAST:event_btn_quizMouseExited
+
+    private void btn_velhaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_velhaMouseEntered
+        // TODO add your handling code here:
+        btn_velha.setBackground(new Color(102, 102, 102, 255));
+        btn_velha.setForeground(new Color(255, 255, 255, 255));
+    }//GEN-LAST:event_btn_velhaMouseEntered
+
+    private void btn_forcaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_forcaMouseEntered
+        // TODO add your handling code here:
+        btn_forca.setBackground(new Color(102, 102, 102, 255));
+        btn_forca.setForeground(new Color(255, 255, 255, 255));
+    }//GEN-LAST:event_btn_forcaMouseEntered
+
+    private void btn_jokenpoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_jokenpoMouseEntered
+        // TODO add your handling code here:
+        btn_jokenpo.setBackground(new Color(102, 102, 102, 255));
+        btn_jokenpo.setForeground(new Color(255, 255, 255, 255));
+    }//GEN-LAST:event_btn_jokenpoMouseEntered
+
+    private void btn_impaparMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_impaparMouseEntered
+        // TODO add your handling code here:
+        btn_impapar.setBackground(new Color(102, 102, 102, 255));
+        btn_impapar.setForeground(new Color(255, 255, 255, 255));
+    }//GEN-LAST:event_btn_impaparMouseEntered
+
+    private void btn_velhaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_velhaMouseExited
+        // TODO add your handling code here:
+        btn_velha.setBackground(Color.WHITE);
+        btn_velha.setForeground(new Color(0, 0, 0, 255));
+    }//GEN-LAST:event_btn_velhaMouseExited
+
+    private void btn_forcaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_forcaMouseExited
+        // TODO add your handling code here:
+        btn_forca.setBackground(Color.WHITE);
+        btn_forca.setForeground(new Color(0, 0, 0, 255));
+    }//GEN-LAST:event_btn_forcaMouseExited
+
+    private void btn_jokenpoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_jokenpoMouseExited
+        // TODO add your handling code here:
+        btn_jokenpo.setBackground(Color.WHITE);
+        btn_jokenpo.setForeground(new Color(0, 0, 0, 255));
+    }//GEN-LAST:event_btn_jokenpoMouseExited
+
+    private void btn_impaparMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_impaparMouseExited
+        // TODO add your handling code here:
+        btn_impapar.setBackground(Color.WHITE);
+        btn_impapar.setForeground(new Color(0, 0, 0, 255));
+    }//GEN-LAST:event_btn_impaparMouseExited
 
     /**
      * @param args the command line arguments

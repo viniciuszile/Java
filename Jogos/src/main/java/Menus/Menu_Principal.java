@@ -47,7 +47,7 @@ public class Menu_Principal extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(500, 500));
         setType(java.awt.Window.Type.POPUP);
 
-        jPanel1.setBackground(new java.awt.Color(255, 0, 102));
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setMaximumSize(new java.awt.Dimension(500, 500));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -60,6 +60,7 @@ public class Menu_Principal extends javax.swing.JFrame {
         botao_rpg.setForeground(new java.awt.Color(0, 0, 0));
         botao_rpg.setSelected(true);
         botao_rpg.setText("RPG");
+        botao_rpg.setAlignmentY(0.0F);
         botao_rpg.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         botao_rpg.setBorderPainted(false);
         botao_rpg.setFocusPainted(false);
