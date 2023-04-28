@@ -4,12 +4,13 @@
  */
 package Menus;
 
-import Jogos_Mult.Acerte_Numero_Mult;
-import Jogos_Mult.Forca;
-import Jogos_Mult.Impa_Ou_Par;
-import Jogos_Mult.Jokenpo;
-import Jogos_Mult.Quiz;
+import Jogos_Solo.Acerte_Numero;
+import Jogos_Solo.Forca;
+import Jogos_Solo.Impar_Par;
+import Jogos_Solo.Jokenpo;
+import Jogos_Solo.Quiz;
 import Jogos_Solo.Jogo_Da_Velha;
+import java.awt.Dimension;
 
 /**
  *
@@ -22,6 +23,11 @@ public class Menu_Solo extends javax.swing.JFrame {
      */
     public Menu_Solo() {
         initComponents();
+        Dimension maxDimension = new Dimension(500, 600);
+        this.setMaximumSize(maxDimension);
+
+// Impede que o usuário redimensione a janela
+        this.setResizable(false);
     }
 
     /**
@@ -36,7 +42,7 @@ public class Menu_Solo extends javax.swing.JFrame {
         jPasswordField1 = new javax.swing.JPasswordField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jEditorPane1 = new javax.swing.JEditorPane();
-        jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         mult_menu = new javax.swing.JToggleButton();
         jLabel2 = new javax.swing.JLabel();
         btn_acertenum = new javax.swing.JToggleButton();
@@ -45,34 +51,39 @@ public class Menu_Solo extends javax.swing.JFrame {
         btn_velha = new javax.swing.JToggleButton();
         btn_jokenpo = new javax.swing.JToggleButton();
         btn_impapar = new javax.swing.JToggleButton();
+        jLabel1 = new javax.swing.JLabel();
 
         jPasswordField1.setText("jPasswordField1");
 
         jScrollPane1.setViewportView(jEditorPane1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setSize(new java.awt.Dimension(500, 400));
+        setBackground(new java.awt.Color(42, 42, 42));
+        setPreferredSize(new java.awt.Dimension(500, 500));
+        setSize(new java.awt.Dimension(500, 550));
         setType(java.awt.Window.Type.POPUP);
 
-        jLabel1.setFont(new java.awt.Font("Book Antiqua", 0, 18)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Selecione Um Jogo");
-        jLabel1.setToolTipText("");
-        jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel1.setBackground(new java.awt.Color(255, 0, 102));
+        jPanel1.setPreferredSize(new java.awt.Dimension(500, 600));
 
-        mult_menu.setText("Menu");
+        mult_menu.setBackground(new java.awt.Color(255, 255, 255));
+        mult_menu.setForeground(new java.awt.Color(0, 0, 0));
+        mult_menu.setText(" ↲");
         mult_menu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mult_menuActionPerformed(evt);
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Book Antiqua", 0, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Book Antiqua", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Solo");
         jLabel2.setToolTipText("");
         jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
+        btn_acertenum.setBackground(new java.awt.Color(255, 255, 255));
+        btn_acertenum.setForeground(new java.awt.Color(0, 0, 0));
         btn_acertenum.setText("Acerte o Numero");
         btn_acertenum.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -80,6 +91,8 @@ public class Menu_Solo extends javax.swing.JFrame {
             }
         });
 
+        btn_forca.setBackground(new java.awt.Color(255, 255, 255));
+        btn_forca.setForeground(new java.awt.Color(0, 0, 0));
         btn_forca.setText("Forca");
         btn_forca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -87,6 +100,8 @@ public class Menu_Solo extends javax.swing.JFrame {
             }
         });
 
+        btn_quiz.setBackground(new java.awt.Color(255, 255, 255));
+        btn_quiz.setForeground(new java.awt.Color(0, 0, 0));
         btn_quiz.setText("Quiz");
         btn_quiz.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,6 +109,8 @@ public class Menu_Solo extends javax.swing.JFrame {
             }
         });
 
+        btn_velha.setBackground(new java.awt.Color(255, 255, 255));
+        btn_velha.setForeground(new java.awt.Color(0, 0, 0));
         btn_velha.setText("Jogo Da Velha");
         btn_velha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,6 +118,8 @@ public class Menu_Solo extends javax.swing.JFrame {
             }
         });
 
+        btn_jokenpo.setBackground(new java.awt.Color(255, 255, 255));
+        btn_jokenpo.setForeground(new java.awt.Color(0, 0, 0));
         btn_jokenpo.setText("Jokenpo");
         btn_jokenpo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -108,6 +127,8 @@ public class Menu_Solo extends javax.swing.JFrame {
             }
         });
 
+        btn_impapar.setBackground(new java.awt.Color(255, 255, 255));
+        btn_impapar.setForeground(new java.awt.Color(0, 0, 0));
         btn_impapar.setText("Impa Ou Par");
         btn_impapar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -115,49 +136,69 @@ public class Menu_Solo extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Book Antiqua", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Selecione Um Jogo");
+        jLabel1.setToolTipText("");
+        jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(74, 74, 74)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btn_acertenum, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_velha, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_impapar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btn_quiz, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_forca, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_jokenpo, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(58, 58, 58))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(mult_menu)
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(mult_menu, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addGap(45, 45, 45)
+                .addComponent(jLabel1)
+                .addGap(50, 50, 50)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_acertenum, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_quiz, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(39, 39, 39)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_velha, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_forca, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_impapar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_jokenpo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(112, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 397, Short.MAX_VALUE)
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(133, 133, 133)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(btn_forca, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btn_acertenum, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btn_quiz, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btn_jokenpo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btn_impapar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btn_velha, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(mult_menu)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(68, 68, 68)
-                .addComponent(jLabel2)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel1)
-                .addGap(29, 29, 29)
-                .addComponent(btn_acertenum)
-                .addGap(18, 18, 18)
-                .addComponent(btn_quiz)
-                .addGap(18, 18, 18)
-                .addComponent(btn_velha)
-                .addGap(18, 18, 18)
-                .addComponent(btn_forca)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btn_impapar)
-                .addGap(18, 18, 18)
-                .addComponent(btn_jokenpo)
-                .addGap(18, 18, 18)
-                .addComponent(mult_menu)
-                .addContainerGap(49, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -175,10 +216,10 @@ public class Menu_Solo extends javax.swing.JFrame {
     }//GEN-LAST:event_mult_menuActionPerformed
 
     private void btn_acertenumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_acertenumActionPerformed
-        Acerte_Numero_Mult jogo = new Acerte_Numero_Mult();
+        Acerte_Numero jogo = new Acerte_Numero();
 
         // Chame o método iniciarJogo do objeto
-        Acerte_Numero_Mult.main(new String[]{});
+        Acerte_Numero.main(new String[]{});
         this.dispose();
     }//GEN-LAST:event_btn_acertenumActionPerformed
 
@@ -192,10 +233,10 @@ public class Menu_Solo extends javax.swing.JFrame {
 
     private void btn_quizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_quizActionPerformed
         // TODO add your handling code here:
-        Impa_Ou_Par jogo = new Impa_Ou_Par();
+        Quiz jogo = new Quiz();
 
         // Chame o método iniciarJogo do objeto
-        Impa_Ou_Par.main(new String[]{});
+        Quiz.main(new String[]{});
         this.dispose();
     }//GEN-LAST:event_btn_quizActionPerformed
 
@@ -272,6 +313,7 @@ public class Menu_Solo extends javax.swing.JFrame {
     private javax.swing.JEditorPane jEditorPane1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JToggleButton mult_menu;

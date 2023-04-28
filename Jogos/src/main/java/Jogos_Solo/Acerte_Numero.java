@@ -49,7 +49,7 @@ public class Acerte_Numero extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(0, 51, 51));
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
@@ -87,7 +87,7 @@ public class Acerte_Numero extends javax.swing.JFrame {
         jLabel1.setText(".");
 
         label_contador.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        label_contador.setForeground(new java.awt.Color(204, 204, 204));
+        label_contador.setForeground(new java.awt.Color(255, 255, 255));
         label_contador.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         label_contador.setText("Numero De tentavia :");
 
@@ -105,7 +105,7 @@ public class Acerte_Numero extends javax.swing.JFrame {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Copyright © Zile");
 
-        voltar_menu.setBackground(new java.awt.Color(0, 51, 51));
+        voltar_menu.setBackground(new java.awt.Color(255, 255, 255));
         voltar_menu.setForeground(new java.awt.Color(0, 0, 0));
         voltar_menu.setText(" ↲");
         voltar_menu.addActionListener(new java.awt.event.ActionListener() {

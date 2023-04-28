@@ -9,9 +9,9 @@ import java.util.Scanner;
 
 /**
  *
- * @author Zile
+ * @author wesley.ssantos58
  */
-public class Jogo_Da_Velha {
+public class Jokenpo {
 
     public static void main(String[] args) {
         int decisao = 0;
@@ -20,7 +20,7 @@ public class Jogo_Da_Velha {
 
         do {
             for (int i = 0; i < 10; i++) {
-                System.out.println("Jogo Da Velha solo.");
+                System.out.println("Jogo Jokenpo solo.");
             }
             System.out.println("Digite 1 para jogar novamente 2 para voltar ao menu.");
             decisao = scan.nextInt();

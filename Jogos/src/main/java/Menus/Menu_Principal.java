@@ -4,7 +4,10 @@
  */
 package Menus;
 
+import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Insets;
+import javax.swing.BorderFactory;
 
 /**
  *
@@ -19,6 +22,7 @@ public class Menu_Principal extends javax.swing.JFrame {
         initComponents();
         Dimension maxDimension = new Dimension(500, 500);
         this.setMaximumSize(maxDimension);
+        
 
 // Impede que o usuário redimensione a janela
         this.setResizable(false);
@@ -43,7 +47,7 @@ public class Menu_Principal extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(500, 500));
         setType(java.awt.Window.Type.POPUP);
 
-        jPanel1.setBackground(new java.awt.Color(42, 42, 42));
+        jPanel1.setBackground(new java.awt.Color(255, 0, 102));
         jPanel1.setMaximumSize(new java.awt.Dimension(500, 500));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -51,22 +55,24 @@ public class Menu_Principal extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Selecione um modo de jogo");
 
-        botao_rpg.setBackground(new java.awt.Color(0, 0, 0));
+        botao_rpg.setBackground(new java.awt.Color(255, 255, 255));
         botao_rpg.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        botao_rpg.setForeground(new java.awt.Color(255, 255, 255));
+        botao_rpg.setForeground(new java.awt.Color(0, 0, 0));
         botao_rpg.setSelected(true);
         botao_rpg.setText("RPG");
+        botao_rpg.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         botao_rpg.setBorderPainted(false);
         botao_rpg.setFocusPainted(false);
         botao_rpg.setFocusable(false);
         botao_rpg.setIconTextGap(10);
+        botao_rpg.setMargin(new java.awt.Insets(0, 0, 0, 0));
         botao_rpg.setRequestFocusEnabled(false);
         botao_rpg.setRolloverEnabled(false);
         botao_rpg.setVerifyInputWhenFocusTarget(false);
 
-        botao_multplayer.setBackground(new java.awt.Color(0, 0, 0));
+        botao_multplayer.setBackground(new java.awt.Color(255, 255, 255));
         botao_multplayer.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        botao_multplayer.setForeground(new java.awt.Color(255, 255, 255));
+        botao_multplayer.setForeground(new java.awt.Color(0, 0, 0));
         botao_multplayer.setSelected(true);
         botao_multplayer.setText("2 Jogadores");
         botao_multplayer.setBorderPainted(false);
@@ -81,15 +87,14 @@ public class Menu_Principal extends javax.swing.JFrame {
             }
         });
 
-        botao_solo.setBackground(new java.awt.Color(0, 0, 0));
+        botao_solo.setBackground(new java.awt.Color(255, 255, 255));
         botao_solo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        botao_solo.setForeground(new java.awt.Color(255, 255, 255));
+        botao_solo.setForeground(new java.awt.Color(0, 0, 0));
         botao_solo.setSelected(true);
         botao_solo.setText("1 Jogador");
         botao_solo.setBorderPainted(false);
         botao_solo.setFocusPainted(false);
         botao_solo.setFocusable(false);
-        botao_solo.setOpaque(false);
         botao_solo.setRequestFocusEnabled(false);
         botao_solo.setRolloverEnabled(false);
         botao_solo.addActionListener(new java.awt.event.ActionListener() {
@@ -106,8 +111,8 @@ public class Menu_Principal extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(182, 182, 182)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(botao_solo, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botao_multplayer, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botao_solo, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
+                    .addComponent(botao_multplayer, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
                     .addComponent(botao_rpg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(168, 168, 168))
         );
@@ -116,8 +121,8 @@ public class Menu_Principal extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(135, 135, 135)
                 .addComponent(jLabel1)
-                .addGap(93, 93, 93)
-                .addComponent(botao_rpg, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
+                .addComponent(botao_rpg, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(botao_multplayer, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
