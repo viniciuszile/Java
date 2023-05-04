@@ -2,16 +2,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Jogos_Mult;
+package Jogos;
 
 import Menus.Menu_Principal;
 import java.util.Scanner;
 
 /**
  *
- * @author Zile
+ * @author wesley.ssantos58
  */
-public class Quiz {
+public class Forca {
 
     public static void main(String[] args) {
         int decisao = 0;
@@ -20,7 +20,7 @@ public class Quiz {
 
         do {
             for (int i = 0; i < 10; i++) {
-                System.out.println("Jogo Quiz");
+                System.out.println("Jogo Da Forca solo.");
             }
             System.out.println("Digite 1 para jogar novamente 2 para voltar ao menu.");
             decisao = scan.nextInt();
